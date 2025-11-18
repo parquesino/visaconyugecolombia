@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -17,180 +16,440 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1389509355423812&ev=PageView&noscript=1"
     /></noscript>
-    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visa de Cónyuge Colombia | Colombian Passport</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --blue-900: #1e3a8a;
+            --blue-800: #1e40af;
+            --blue-700: #1d4ed8;
+            --blue-600: #2563eb;
+            --blue-500: #3b82f6;
+            --blue-50: #eff6ff;
+            --amber-500: #f59e0b;
+            --amber-50: #fffbeb;
+            --sky-700: #0369a1;
+            --sky-50: #f0f9ff;
+            --green-600: #16a34a;
+            --green-500: #22c55e;
+            --green-50: #f0fdf4;
+            --gray-800: #1f2937;
+            --gray-700: #374151;
+            --gray-600: #4b5563;
+            --gray-50: #f9fafb;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
         body {
             font-family: 'Inter', sans-serif;
+            background-color: var(--gray-50);
+            color: var(--gray-800);
+            line-height: 1.6;
             scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
-        .hero-bg-spouse {
-            background-color: #1e3a8a; /* Un azul profundo y confiable */
+
+        a { text-decoration: none; color: inherit; transition: color 0.2s; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- LAYOUT --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2 { grid-template-columns: 1fr 1fr; }
+            .grid-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        .text-center { text-align: center; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .hidden { display: none !important; }
+        .block { display: block; }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: var(--white);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo-img { height: 48px; width: auto; }
+
+        .nav-links-desktop { display: none; gap: 1.5rem; align-items: center; }
+        .nav-links-desktop a { font-weight: 500; color: var(--gray-700); font-size: 0.9rem; }
+        .nav-links-desktop a:hover { color: var(--blue-600); }
+
+        .mobile-menu-btn { background: none; border: none; cursor: pointer; color: var(--gray-700); }
+        
+        @media (min-width: 768px) {
+            .nav-links-desktop { display: flex; }
+            .mobile-menu-btn { display: none; }
+        }
+
+        #mobile-menu {
+            background-color: var(--white);
+            border-top: 1px solid #eee;
+            padding: 1rem 0;
+        }
+        #mobile-menu a {
+            display: block;
+            padding: 0.75rem 1.5rem;
+            color: var(--gray-700);
+            font-weight: 500;
+        }
+        #mobile-menu a:hover { background-color: var(--blue-50); color: var(--blue-600); }
+
+        /* --- BUTTONS --- */
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-blue { background-color: var(--blue-600); color: white; }
+        .btn-blue:hover { background-color: var(--blue-700); }
+        .btn-green { background-color: var(--green-500); color: white; }
+        .btn-green:hover { background-color: var(--green-600); }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            background-color: var(--blue-900);
             background-image: radial-gradient(circle at top right, rgba(56, 189, 248, 0.2) 0%, transparent 40%),
                               radial-gradient(circle at bottom left, rgba(250, 204, 21, 0.1) 0%, transparent 35%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
         }
+        .hero-title { font-size: 2.5rem; font-weight: 800; line-height: 1.2; margin-bottom: 1rem; }
+        .hero-subtitle { font-size: 1.5rem; font-weight: 300; margin-bottom: 2rem; opacity: 0.9; }
+        .hero-text { font-size: 1.125rem; color: #d1d5db; max-width: 42rem; margin: 0 auto 2.5rem auto; }
+
+        @media (min-width: 768px) {
+            .hero-section { padding: 8rem 0; }
+            .hero-title { font-size: 3.75rem; }
+            .hero-subtitle { font-size: 2rem; }
+        }
+
+        /* --- SECTIONS --- */
+        .section-padding { padding: 5rem 0; }
+        .section-title { font-size: 2.25rem; font-weight: 700; color: var(--blue-800); text-align: center; margin-bottom: 3rem; }
+
+        /* --- CARDS & FEATURES --- */
+        .feature-card {
+            background-color: var(--white);
+            border-left: 4px solid;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .feature-amber { background-color: var(--amber-50); border-color: var(--amber-500); }
+        .feature-amber h3 { color: #b45309; }
+        .feature-sky { background-color: var(--sky-50); border-color: #0ea5e9; }
+        .feature-sky h3 { color: var(--sky-700); }
+        
         .camila-photo {
             width: 100%;
-            max-width: 320px; 
-            height: auto;
-            object-fit: cover;
-            border-radius: 0.75rem; 
+            max-width: 320px;
+            border-radius: 0.75rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .section-fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+
+        /* --- PROCESS STEPS (Counters) --- */
+        .process-section {
+            counter-reset: step; /* Initialize CSS counter */
         }
-        .section-fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .step-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--blue-500);
+            position: relative;
+            margin-top: 2rem; /* Space for the bubble */
         }
         .step-card::before {
             content: counter(step);
             counter-increment: step;
             position: absolute;
             top: -1.5rem;
-            left: -1.5rem;
+            left: 1.5rem; /* Adjusted for better alignment */
             width: 3rem;
             height: 3rem;
             background-color: #e0f2fe;
             color: #0284c7;
-            border-radius: 9999px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 800;
             font-size: 1.25rem;
             border: 4px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .step-card h3 { color: var(--blue-700); font-size: 1.25rem; font-weight: 700; margin-top: 0.5rem; margin-bottom: 0.75rem; }
+
+        /* --- FORM --- */
+        .form-card {
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+            max-width: 42rem;
+            margin: 0 auto;
+        }
+        @media(min-width: 640px) { .form-card { padding: 3.5rem; } }
+
+        .form-group { margin-bottom: 1.5rem; }
+        .form-label { font-size: 1.125rem; font-weight: 500; color: var(--gray-800); display: block; margin-bottom: 0.75rem; }
+        
+        .radio-group { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        
+        /* Custom Radio Styling */
+        .radio-custom { display: none; } /* Hide actual radio */
+        .radio-custom-label {
+            padding: 0.75rem 1.25rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            color: var(--gray-700);
+            font-size: 0.9rem;
+            transition: all 0.2s;
         }
         .radio-custom:checked + .radio-custom-label {
-            @apply bg-blue-600 text-white border-blue-600 ring-2 ring-blue-400;
+            background-color: var(--blue-600);
+            color: white;
+            border-color: var(--blue-600);
+            box-shadow: 0 0 0 2px #bfdbfe;
         }
-        .radio-custom-label {
-            @apply px-5 py-3 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors text-gray-700 text-sm;
+        .radio-custom-label:hover { background-color: var(--gray-50); }
+
+        select {
+            width: 100%;
+            padding: 0.875rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            background-color: white;
         }
+
+        /* --- RESULTS BOX --- */
+        .bg-green-50 { background-color: var(--green-50); }
+        .text-green-800 { color: #166534; }
+        .border-green-600 { border-color: var(--green-600); }
+        
+        .bg-red-50 { background-color: #fef2f2; }
+        .text-red-800 { color: #991b1b; }
+        .border-red-600 { border-color: #dc2626; }
+
+        .bg-yellow-50 { background-color: var(--amber-50); }
+        .text-yellow-800 { color: #854d0e; }
+        .border-yellow-500 { border-color: var(--amber-500); }
+
+        .border-l-4 { border-left-width: 4px; }
+        .p-6 { padding: 1.5rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+
+        /* --- PRICING / INVESTMENT --- */
+        .pricing-card {
+            background-color: var(--blue-50);
+            padding: 2rem;
+            border-radius: 1rem;
+            border: 1px solid #bfdbfe;
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+        }
+        .price-tag { font-size: 3rem; font-weight: 800; color: var(--blue-800); margin: 1rem 0; }
+        
+        .cost-item {
+            background-color: var(--gray-50);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #e5e7eb;
+        }
+        .cost-title { font-size: 1.1rem; font-weight: 600; }
+        .cost-value { font-size: 1.5rem; font-weight: 700; color: var(--gray-800); }
+
+        /* --- FAQ --- */
+        .faq-item {
+            background-color: var(--white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        .faq-question { font-size: 1.1rem; font-weight: 600; color: var(--blue-700); margin-bottom: 0.5rem; }
+
+        /* --- FOOTER --- */
+        footer { background-color: var(--gray-800); color: #9ca3af; padding: 4rem 0; text-align: center; }
+        footer a:hover { color: var(--blue-50); }
+
+        /* --- ANIMATIONS --- */
+        .section-fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+        .section-fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* --- COOKIE BANNER --- */
+        #cookie-consent-banner {
+            position: fixed;
+            bottom: 0; left: 0; right: 0;
+            background-color: var(--gray-800);
+            color: white;
+            padding: 1rem;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            z-index: 100;
+            text-align: center;
+        }
+        @media(min-width: 640px) { #cookie-consent-banner { flex-direction: row; } }
+
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body>
 
-    <!-- NAV -->
-    <nav class="bg-white shadow-lg sticky top-0 z-50">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex-shrink-0">
-                    <a href="https://www.abogadosdemigracion.com.co" title="Colombian Passport Home">
-                        <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="h-12" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
-                    </a>
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <a href="https://www.abogadosdemigracion.com.co" title="Colombian Passport Home">
+                    <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="logo-img" onerror="this.onerror=null;this.src='https://placehold.co/200x50/0056b3/FFFFFF?text=ColombianPassport.com';">
+                </a>
+                
+                <div class="nav-links-desktop">
+                    <a href="#porque-nosotros">Por Qué Nosotros</a>
+                    <a href="#proceso">Nuestro Proceso</a>
+                    <a href="#costos">Inversión</a>
+                    <a href="#form-section" class="btn btn-blue" style="padding: 0.5rem 1rem; font-size: 0.9rem;">Verificar mi Caso</a>
                 </div>
-                <div class="hidden md:flex items-center space-x-4">
-                    <a href="#porque-nosotros" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Por Qué Nosotros</a>
-                    <a href="#proceso" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Nuestro Proceso</a>
-                    <a href="#costos" class="text-gray-700 hover:text-blue-600 px-3 py-2 rounded-md text-sm font-medium">Inversión</a>
-                    <a href="#form-section" class="btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 py-2 px-4 text-sm">Verificar mi Caso</a>
-                </div>
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="text-gray-700 hover:text-blue-600 focus:outline-none">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                    </button>
-                </div>
+
+                <button id="mobile-menu-button" class="mobile-menu-btn">
+                    <svg style="width: 24px; height: 24px;" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
             </div>
         </div>
-        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg py-2">
-            <a href="#porque-nosotros" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Por Qué Nosotros</a>
-            <a href="#proceso" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Nuestro Proceso</a>
-            <a href="#costos" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Inversión</a>
-            <a href="#form-section" class="block text-gray-700 hover:bg-blue-50 hover:text-blue-600 px-4 py-2 text-sm">Verificar mi Caso</a>
+        <div id="mobile-menu" class="hidden">
+            <a href="#porque-nosotros">Por Qué Nosotros</a>
+            <a href="#proceso">Nuestro Proceso</a>
+            <a href="#costos">Inversión</a>
+            <a href="#form-section">Verificar mi Caso</a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <header class="hero-bg-spouse text-white py-20 md:py-32 section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4 leading-tight">Tu Futuro Juntos en Colombia Comienza Aquí.</h1>
-            <h2 class="text-2xl sm:text-3xl md:text-4xl font-light mb-8 max-w-3xl mx-auto">Asesoría Legal Experta para la Visa de Cónyuge (Tipo M)</h2>
-            <p class="text-lg mb-10 max-w-2xl mx-auto text-gray-300">Unimos familias con un proceso claro, transparente y empático. Obtén tu visa para vivir y trabajar en Colombia, y construye tu camino hacia la residencia permanente.</p>
-            <a href="#form-section" class="btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400 py-4 px-10 text-xl">¿Califico para la Visa? - Verificación Gratuita</a>
+    <header class="hero-section section-fade-in">
+        <div class="container">
+            <h1 class="hero-title">Tu Futuro Juntos en Colombia Comienza Aquí.</h1>
+            <h2 class="hero-subtitle">Asesoría Legal Experta para la Visa de Cónyuge (Tipo M)</h2>
+            <p class="hero-text">Unimos familias con un proceso claro, transparente y empático. Obtén tu visa para vivir y trabajar en Colombia, y construye tu camino hacia la residencia permanente.</p>
+            <a href="#form-section" class="btn btn-green" style="padding: 1rem 2.5rem; font-size: 1.1rem;">¿Califico para la Visa? - Verificación Gratuita</a>
         </div>
     </header>
 
-    <!-- POR QUÉ NOSOTROS -->
-    <section id="porque-nosotros" class="py-20 md:py-28 bg-white section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">Un Proceso Humano para un Paso de Vida Crucial</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div class="flex justify-center md:justify-end">
-                    <img src="https://static.wixstatic.com/media/d8d541_e08ab4e7b0124418a3f5b7e014d1f531~mv2.png" alt="Camila Ocampo, Abogada de Inmigración" class="camila-photo shadow-2xl" onerror="this.onerror=null;this.src='https://placehold.co/320x400/1e3a8a/FFFFFF?text=Camila+Ocampo';">
+    <section id="porque-nosotros" class="section-padding section-fade-in" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Un Proceso Humano para un Paso de Vida Crucial</h2>
+            <div class="grid-2" style="align-items: center;">
+                <div style="display: flex; justify-content: center;">
+                    <img src="https://static.wixstatic.com/media/d8d541_e08ab4e7b0124418a3f5b7e014d1f531~mv2.png" alt="Camila Ocampo, Abogada de Inmigración" class="camila-photo" onerror="this.onerror=null;this.src='https://placehold.co/320x400/1e3a8a/FFFFFF?text=Camila+Ocampo';">
                 </div>
-                <div class="space-y-8 text-gray-700 leading-relaxed text-lg">
-                     <div class="bg-amber-50 p-6 rounded-xl border-l-4 border-amber-500 shadow-md">
-                        <h3 class="text-2xl font-semibold text-amber-700 mb-2">Compromiso con tu Caso y Estrategia Adaptativa</h3>
-                        <p class="text-amber-600">Entendemos que las decisiones migratorias son discrecionales. Si tu solicitud es inadmitida, nuestro servicio incluye la preparación y presentación de nuevas solicitudes sin costos adicionales de honorarios, adaptando la estrategia legal hasta lograr la aprobación.</p>
+                <div>
+                     <div class="feature-card feature-amber">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #b45309;">Compromiso con tu Caso y Estrategia Adaptativa</h3>
+                        <p style="color: #92400e;">Entendemos que las decisiones migratorias son discrecionales. Si tu solicitud es inadmitida, nuestro servicio incluye la preparación y presentación de nuevas solicitudes sin costos adicionales de honorarios, adaptando la estrategia legal hasta lograr la aprobación.</p>
                     </div>
-                     <div class="bg-sky-50 p-6 rounded-xl border-l-4 border-sky-500 shadow-md">
-                        <h3 class="text-2xl font-semibold text-sky-700 mb-2">Proceso Transparente y Sin Estrés</h3>
-                        <p class="text-sky-600">Nuestra misión es guiarte con total transparencia y empatía. Te brindamos una experiencia fluida, manejando la complejidad para que tú solo te preocupes por tu nueva vida en Colombia.</p>
+                     <div class="feature-card feature-sky">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #0369a1;">Proceso Transparente y Sin Estrés</h3>
+                        <p style="color: #0284c7;">Nuestra misión es guiarte con total transparencia y empatía. Te brindamos una experiencia fluida, manejando la complejidad para que tú solo te preocupes por tu nueva vida en Colombia.</p>
                     </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-blue-700 mb-2">Acceso a Nuestra Red de Confianza</h3>
-                        <p>Te conectamos con socios de confianza para todas tus necesidades: apostillas, traducciones, asesoría financiera, seguros de salud y más, garantizando experiencia y precios justos.</p>
+                    <div style="padding: 1.5rem;">
+                        <h3 style="font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--blue-700);">Acceso a Nuestra Red de Confianza</h3>
+                        <p style="color: var(--gray-700);">Te conectamos con socios de confianza para todas tus necesidades: apostillas, traducciones, asesoría financiera, seguros de salud y más, garantizando experiencia y precios justos.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FORMULARIO DE CUALIFICACIÓN -->
-    <section id="form-section" class="py-20 md:py-28 bg-gray-50 section-fade-in scroll-mt-24">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-2xl">
-            <div class="bg-white p-8 sm:p-10 md:p-14 rounded-2xl shadow-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-5 text-blue-700">Verifica tu Elegibilidad para la Visa de Cónyuge</h2>
-                <p class="text-center text-gray-600 mb-10 text-lg">Responde estas preguntas rápidas para una evaluación preliminar de tu caso. Es gratis, confidencial y sin compromiso.</p>
+    <section id="form-section" class="section-padding section-fade-in">
+        <div class="container">
+            <div class="form-card">
+                <h2 class="section-title" style="margin-bottom: 1rem; color: var(--blue-700);">Verifica tu Elegibilidad para la Visa de Cónyuge</h2>
+                <p class="text-center" style="margin-bottom: 2.5rem; color: var(--gray-600);">Responde estas preguntas rápidas para una evaluación preliminar de tu caso. Es gratis, confidencial y sin compromiso.</p>
 
-                <form id="spouseVisaForm" class="space-y-8">
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">1. ¿Tu pareja es ciudadano(a) colombiano(a) con Cédula de Ciudadanía vigente?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                <form id="spouseVisaForm">
+                    <div class="form-group">
+                        <label class="form-label">1. ¿Tu pareja es ciudadano(a) colombiano(a) con Cédula de Ciudadanía vigente?</label>
+                        <div class="radio-group">
                             <input type="radio" id="partnerYes" name="isPartnerColombian" value="yes" class="radio-custom" required><label for="partnerYes" class="radio-custom-label">Sí</label>
                             <input type="radio" id="partnerNo" name="isPartnerColombian" value="no" class="radio-custom"><label for="partnerNo" class="radio-custom-label">No</label>
                         </div>
                     </div>
 
-                     <div class="space-y-2">
-                        <label class="form-label text-lg">2. ¿Están legalmente casados?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                     <div class="form-group">
+                        <label class="form-label">2. ¿Están legalmente casados?</label>
+                        <div class="radio-group">
                             <input type="radio" id="marriedYes" name="isMarried" value="yes" class="radio-custom" required><label for="marriedYes" class="radio-custom-label">Sí</label>
                             <input type="radio" id="marriedNo" name="isMarried" value="no" class="radio-custom"><label for="marriedNo" class="radio-custom-label">No</label>
                         </div>
                     </div>
                     
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">3. ¿Se casaron en Colombia o en el extranjero?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div class="form-group">
+                        <label class="form-label">3. ¿Se casaron en Colombia o en el extranjero?</label>
+                        <div class="radio-group">
                             <input type="radio" id="marriedInColombia" name="marriageLocation" value="colombia" class="radio-custom" required><label for="marriedInColombia" class="radio-custom-label">En Colombia</label>
                             <input type="radio" id="marriedAbroad" name="marriageLocation" value="abroad" class="radio-custom"><label for="marriedAbroad" class="radio-custom-label">En el Extranjero</label>
                         </div>
                     </div>
 
-                    <div id="registrationQuestion" class="space-y-2 hidden">
-                        <label class="form-label text-lg">4. Si se casaron en el extranjero, ¿ya registraron su matrimonio en Colombia?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div id="registrationQuestion" class="form-group hidden">
+                        <label class="form-label">4. Si se casaron en el extranjero, ¿ya registraron su matrimonio en Colombia?</label>
+                        <div class="radio-group">
                             <input type="radio" id="registeredYes" name="isRegistered" value="yes" class="radio-custom"><label for="registeredYes" class="radio-custom-label">Sí</label>
                             <input type="radio" id="registeredNo" name="isRegistered" value="no" class="radio-custom"><label for="registeredNo" class="radio-custom-label">No</label>
                             <input type="radio" id="registeredUnsure" name="isRegistered" value="unsure" class="radio-custom"><label for="registeredUnsure" class="radio-custom-label">No estoy seguro/a</label>
                         </div>
                     </div>
 
-                    <div>
-                        <label for="applicationCountry" class="form-label text-lg">5. ¿Desde dónde se planea solicitar la visa?</label>
-                        <select id="applicationCountry" name="applicationCountry" class="mt-2 text-lg w-full px-4 py-3.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <div class="form-group">
+                        <label for="applicationCountry" class="form-label">5. ¿Desde dónde se planea solicitar la visa?</label>
+                        <select id="applicationCountry" name="applicationCountry" required>
                           <option value="" disabled selected>Selecciona una opción</option>
                           <option value="colombia">Desde Colombia</option>
                           <option value="residence">Desde mi país de residencia</option>
@@ -198,144 +457,146 @@
                         </select>
                     </div>
 
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">6. ¿El cónyuge extranjero tiene algún antecedente penal o judicial?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div class="form-group">
+                        <label class="form-label">6. ¿El cónyuge extranjero tiene algún antecedente penal o judicial?</label>
+                        <div class="radio-group">
                             <input type="radio" id="criminalNo" name="criminalRecord" value="no" class="radio-custom" required><label for="criminalNo" class="radio-custom-label">No</label>
                             <input type="radio" id="criminalYes" name="criminalRecord" value="yes" class="radio-custom"><label for="criminalYes" class="radio-custom-label">Sí</label>
                         </div>
                     </div>
                     
-                    <div class="space-y-2">
-                        <label class="form-label text-lg">7. ¿Planean vivir juntos en Colombia?</label>
-                        <div class="flex flex-wrap gap-3 mt-2">
+                    <div class="form-group">
+                        <label class="form-label">7. ¿Planean vivir juntos en Colombia?</label>
+                        <div class="radio-group">
                             <input type="radio" id="liveTogetherYes" name="liveTogether" value="yes" class="radio-custom" required><label for="liveTogetherYes" class="radio-custom-label">Sí</label>
                             <input type="radio" id="liveTogetherNo" name="liveTogether" value="no" class="radio-custom"><label for="liveTogetherNo" class="radio-custom-label">No</label>
                         </div>
                     </div>
 
-                    <button type="submit" id="submitSpouseVisaBtn" class="btn bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 w-full text-xl py-4 mt-6">Ver mi Evaluación Preliminar</button>
+                    <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Ver mi Evaluación Preliminar</button>
                 </form>
 
-                <div id="resultArea" class="mt-10" style="display: none;"></div>
+                <div id="resultArea" style="display: none; margin-top: 2rem;"></div>
             </div>
         </div>
     </section>
 
-    <!-- PROCESO DETALLADO -->
-    <section id="proceso" class="py-20 md:py-28 bg-white section-fade-in" style="counter-reset: step;">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-20 text-blue-800">Nuestro Proceso Legal Detallado</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-y-24 gap-x-12">
-                <div class="step-card relative bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">1. Estrategia Migratoria y Planificación</h3>
-                    <p class="text-gray-600">Creamos una estrategia legal robusta para tu caso y planificamos cada paso de forma clara y responsable, incluyendo la planificación de viajes.</p>
+    <section id="proceso" class="section-padding section-fade-in process-section" style="background-color: white;">
+        <div class="container">
+            <h2 class="section-title">Nuestro Proceso Legal Detallado</h2>
+            <div class="grid-3">
+                <div class="step-card">
+                    <h3>Estrategia Migratoria y Planificación</h3>
+                    <p style="color: var(--gray-600);">Creamos una estrategia legal robusta para tu caso y planificamos cada paso de forma clara y responsable, incluyendo la planificación de viajes.</p>
                 </div>
-                <div class="step-card relative bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">2. Recopilación y Revisión de Documentos</h3>
-                    <p class="text-gray-600">Una abogada experta revisa tus documentos y las respuestas al formulario para asegurarse de que cumplan con los requisitos y la estrategia diseñada.</p>
+                <div class="step-card">
+                    <h3>Recopilación y Revisión de Documentos</h3>
+                    <p style="color: var(--gray-600);">Una abogada experta revisa tus documentos y las respuestas al formulario para asegurarse de que cumplan con los requisitos y la estrategia diseñada.</p>
                 </div>
-                 <div class="step-card relative bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">3. Presentación ante Cancillería</h3>
-                    <p class="text-gray-600">Preparamos, organizamos y presentamos tu solicitud completa a través del sistema oficial SITAC de la Cancillería Colombiana.</p>
+                 <div class="step-card">
+                    <h3>Presentación ante Cancillería</h3>
+                    <p style="color: var(--gray-600);">Preparamos, organizamos y presentamos tu solicitud completa a través del sistema oficial SITAC de la Cancillería Colombiana.</p>
                 </div>
-                <div class="step-card relative bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">4. Seguimiento y Requerimientos</h3>
-                    <p class="text-gray-600">Monitoreamos tu caso y respondemos diligentemente a cualquier requerimiento de información adicional que pueda solicitar la autoridad migratoria.</p>
+                <div class="step-card">
+                    <h3>Seguimiento y Requerimientos</h3>
+                    <p style="color: var(--gray-600);">Monitoreamos tu caso y respondemos diligentemente a cualquier requerimiento de información adicional que pueda solicitar la autoridad migratoria.</p>
                 </div>
-                <div class="step-card relative bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">5. Registro de Visa Aprobada</h3>
-                    <p class="text-gray-600">Una vez aprobada, realizamos el registro obligatorio de tu visa por ti en el sistema de Migración Colombia para activar su validez.</p>
+                <div class="step-card">
+                    <h3>Registro de Visa Aprobada</h3>
+                    <p style="color: var(--gray-600);">Una vez aprobada, realizamos el registro obligatorio de tu visa por ti en el sistema de Migración Colombia para activar su validez.</p>
                 </div>
-                 <div class="step-card relative bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-500">
-                    <h3 class="text-xl font-bold text-blue-700 mb-3">6. Cita para Cédula de Extranjería</h3>
-                    <p class="text-gray-600">Solicitamos y agendamos tu cita en Migración Colombia para que obtengas tu Cédula de Extranjería, tu documento de identidad en el país.</p>
+                 <div class="step-card">
+                    <h3>Cita para Cédula de Extranjería</h3>
+                    <p style="color: var(--gray-600);">Solicitamos y agendamos tu cita en Migración Colombia para que obtengas tu Cédula de Extranjería, tu documento de identidad en el país.</p>
                 </div>
             </div>
         </div>
     </section>
-    
-     <!-- FAQ -->
-    <section id="faq" class="py-20 md:py-28 bg-gray-50 section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
-             <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">Preguntas Frecuentes</h2>
-             <div class="space-y-6">
-                <div class="faq-item bg-white">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">¿Cuál es la diferencia entre una visa 'Inadmitida' y 'Rechazada'?</h3>
-                    <p class="text-gray-700 leading-relaxed">Es una diferencia crucial. Una visa **Inadmitida** significa que la autoridad migratoria requiere más información o la corrección de un documento. No es una negación final. En este caso, nuestro servicio incluye volver a presentar la solicitud las veces que sea necesario sin costo adicional de honorarios. Una visa **Rechazada** es una decisión final y discrecional de la autoridad. En este caso, nuestro servicio se da por concluido y para volver a aplicar se requeriría un nuevo contrato tras 6 meses.</p>
+
+     <section id="faq" class="section-padding section-fade-in" style="background-color: var(--gray-50);">
+        <div class="container" style="max-width: 800px;">
+             <h2 class="section-title">Preguntas Frecuentes</h2>
+             <div>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuál es la diferencia entre una visa 'Inadmitida' y 'Rechazada'?</h3>
+                    <p class="text-gray-700">Es una diferencia crucial. Una visa <strong>Inadmitida</strong> significa que la autoridad migratoria requiere más información o la corrección de un documento. No es una negación final. En este caso, nuestro servicio incluye volver a presentar la solicitud las veces que sea necesario sin costo adicional de honorarios. Una visa <strong>Rechazada</strong> es una decisión final y discrecional de la autoridad. En este caso, nuestro servicio se da por concluido y para volver a aplicar se requeriría un nuevo contrato tras 6 meses.</p>
                 </div>
-                <div class="faq-item bg-white">
-                    <h3 class="text-xl font-semibold text-blue-700 mb-2">¿Cuánto tiempo tarda todo el proceso?</h3>
-                    <p class="text-gray-700 leading-relaxed">Una vez que todos los documentos están reunidos y la solicitud es presentada, el tiempo de estudio por parte de la Cancillería suele ser de 3 a 5 semanas. La recopilación de documentos puede añadir tiempo adicional.</p>
+                <div class="faq-item">
+                    <h3 class="faq-question">¿Cuánto tiempo tarda todo el proceso?</h3>
+                    <p class="text-gray-700">Una vez que todos los documentos están reunidos y la solicitud es presentada, el tiempo de estudio por parte de la Cancillería suele ser de 3 a 5 semanas. La recopilación de documentos puede añadir tiempo adicional.</p>
                 </div>
              </div>
         </div>
     </section>
 
-     <!-- INVERSIÓN -->
-    <section id="costos" class="py-20 md:py-28 bg-white section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-blue-800">Inversión en tu Futuro Juntos</h2>
-            <div class="grid md:grid-cols-2 gap-8 items-start">
-                <div class="bg-blue-50 p-8 rounded-2xl shadow-lg border border-blue-200">
-                    <h3 class="text-2xl font-bold text-blue-700 mb-4">Honorarios Legales</h3>
-                    <p class="text-5xl font-extrabold text-blue-800 mb-4">$550 <span class="text-xl font-medium text-gray-600">USD</span></p>
-                    <p class="text-gray-600 mb-6">Un pago único por nuestro acompañamiento legal completo, que incluye consultoría, revisión de documentos y representación.</p>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start font-semibold text-blue-800 mt-4"><svg class="w-6 h-6 text-blue-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg><span>Incluye nueva presentación si es inadmitida.</span></li>
+     <section id="costos" class="section-padding section-fade-in" style="background-color: white;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 class="section-title">Inversión en tu Futuro Juntos</h2>
+            <div class="grid-2" style="align-items: start;">
+                <div class="pricing-card">
+                    <h3 style="font-size: 1.5rem; font-weight: 700; color: var(--blue-700);">Honorarios Legales</h3>
+                    <p class="price-tag">$550 <span style="font-size: 1.25rem; font-weight: 500; color: var(--gray-600);">USD</span></p>
+                    <p style="color: var(--gray-600); margin-bottom: 1.5rem;">Un pago único por nuestro acompañamiento legal completo, que incluye consultoría, revisión de documentos y representación.</p>
+                    <ul>
+                        <li style="display: flex; align-items: start; color: var(--blue-800); font-weight: 500;">
+                            <span style="margin-right: 0.5rem; color: var(--blue-600);">✓</span>
+                            Incluye nueva presentación si es inadmitida.
+                        </li>
                     </ul>
                 </div>
-                <div class="space-y-6 text-gray-700 pt-8">
-                     <h3 class="text-2xl font-bold text-gray-800 mb-4">Costos Gubernamentales (Pagos a Terceros)</h3>
-                     <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-                        <p class="text-xl font-semibold">Estudio de la Visa</p>
-                        <p class="text-2xl font-bold text-gray-800">$54 USD</p>
-                        <p class="text-sm">Pagados a la Cancillería al momento de la solicitud.</p>
+                
+                <div>
+                     <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem;">Costos Gubernamentales (Pagos a Terceros)</h3>
+                     <div class="cost-item">
+                        <p class="cost-title">Estudio de la Visa</p>
+                        <p class="cost-value">$54 USD</p>
+                        <p style="font-size: 0.875rem;">Pagados a la Cancillería al momento de la solicitud.</p>
                      </div>
-                      <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-                        <p class="text-xl font-semibold">Expedición de la Visa</p>
-                        <p class="text-2xl font-bold text-gray-800">$270 USD</p>
-                        <p class="text-sm">Pagados a la Cancillería una vez la visa es aprobada.</p>
-                     </div>
-                      <div class="bg-gray-100 p-6 rounded-lg shadow-sm">
-                        <p class="text-xl font-semibold">Cédula de Extranjería</p>
-                        <p class="text-2xl font-bold text-gray-800">$280.000 COP</p>
-                        <p class="text-sm">Pagados a Migración Colombia el día de la cita para la cédula.</p>
-                     </div>
+                      <div class="cost-item">
+                        <p class="cost-title">Expedición de la Visa</p>
+                        <p class="cost-value">$270 USD</p>
+                        <p style="font-size: 0.875rem;">Pagados a la Cancillería una vez la visa es aprobada.</p>
+                      </div>
+                      <div class="cost-item">
+                        <p class="cost-title">Cédula de Extranjería</p>
+                        <p class="cost-value">$280.000 COP</p>
+                        <p style="font-size: 0.875rem;">Pagados a Migración Colombia el día de la cita para la cédula.</p>
+                      </div>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- FINAL CTA -->
-    <section class="py-20 md:py-28 bg-blue-800 text-white section-fade-in">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">¿Listos para dar el siguiente paso?</h2>
-            <p class="text-xl md:text-2xl font-light mb-10 max-w-3xl mx-auto">No dejes que la burocracia retrase tu vida juntos. Contáctanos hoy y comencemos a preparar tu caso con la mejor estrategia legal.</p>
-            <a href="https://wa.me/573223395612?text=Hola%20Camila,%20estoy%20interesado/a%20en%20la%20asesor%C3%ADa%20para%20la%20Visa%20de%20C%C3%B3nyuge." target="_blank" class="btn bg-green-500 hover:bg-green-600 text-white text-xl py-4 px-10 focus:ring-green-400">Contactar por WhatsApp</a>
+     <section class="section-padding section-fade-in" style="background-color: var(--blue-900); color: white; text-align: center;">
+        <div class="container">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem;">¿Listos para dar el siguiente paso?</h2>
+            <p style="font-size: 1.25rem; opacity: 0.9; max-width: 800px; margin: 0 auto 2.5rem auto;">No dejes que la burocracia retrase tu vida juntos. Contáctanos hoy y comencemos a preparar tu caso con la mejor estrategia legal.</p>
+            <a href="https://wa.me/573223395612?text=Hola%20Camila,%20estoy%20interesado/a%20en%20la%20asesor%C3%ADa%20para%20la%20Visa%20de%20C%C3%B3nyuge." target="_blank" class="btn btn-green" style="font-size: 1.25rem; padding: 1rem 2.5rem;">Contactar por WhatsApp</a>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-gray-800 text-gray-400 py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <footer>
+        <div class="container">
             <a href="https://www.abogadosdemigracion.com.co" target="_blank" rel="noopener noreferrer">
-                <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="h-12 mx-auto mb-6" onerror="this.onerror=null;this.src='https://placehold.co/200x50/374151/9CA3AF?text=ColombianPassport.com';">
+                <img src="https://static.wixstatic.com/media/d8d541_c0e6b982a4e341f399c07cac0156aebb~mv2.png" alt="Colombian Passport Logo" class="logo-img mx-auto" style="margin-bottom: 1.5rem;" onerror="this.onerror=null;this.src='https://placehold.co/200x50/374151/9CA3AF?text=ColombianPassport.com';">
             </a>
-            <a href="https://www.abogadosdemigracion.com.co" target="_blank" rel="noopener noreferrer" class="mb-1 text-lg block hover:text-blue-400 transition-colors">Colombian Passport</a>
-            <p class="mb-2 mt-4">&copy; <span id="currentYear"></span> ColombianPassport.com. All Rights Reserved.</p>
-            <p class="text-sm mb-6">Asesoría legal experta para tu viaje migratorio.</p>
-            <div class="space-x-6">
-                <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">Política de Privacidad</a>
-                <a href="mailto:camila@colombianpassport.com" class="hover:text-blue-400 transition-colors">camila@colombianpassport.com</a>
+            <a href="https://www.abogadosdemigracion.com.co" target="_blank" rel="noopener noreferrer" style="display: block; font-size: 1.125rem; margin-bottom: 1rem; color: white;">Colombian Passport</a>
+            <p>&copy; <span id="currentYear"></span> ColombianPassport.com. All Rights Reserved.</p>
+            <p style="font-size: 0.875rem; margin-bottom: 1.5rem;">Asesoría legal experta para tu viaje migratorio.</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem;">
+                <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer">Política de Privacidad</a>
+                <a href="mailto:camila@colombianpassport.com">camila@colombianpassport.com</a>
             </div>
         </div>
     </footer>
 
+    <div id="cookie-consent-banner">
+        <p>Usamos cookies para mejorar tu experiencia y para fines de marketing. Al continuar, aceptas nuestra <a href="https://www.abogadosdemigracion.com.co/politica-privacidad" target="_blank" rel="noopener noreferrer" style="text-decoration: underline;">Política de Privacidad</a>.</p>
+        <button id="accept-cookies" class="btn btn-green" style="padding: 0.5rem 1rem; font-size: 0.875rem;">Aceptar</button>
+    </div>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // ... (código del menú y animaciones, sin cambios) ...
-
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
@@ -433,7 +694,7 @@
             function displayResults(status, messages, data) {
                 const resultArea = document.getElementById('resultArea');
                 resultArea.innerHTML = '';
-                resultArea.className = 'p-6 rounded-lg text-center';
+                resultArea.className = 'p-6 rounded-lg text-center'; // Reset basic classes
                 resultArea.style.display = 'block';
                 let content = '';
 
@@ -455,11 +716,10 @@
                     resultArea.classList.add('bg-green-50', 'border-l-4', 'border-green-600', 'text-green-800');
                     const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "Me gustaría recibir una propuesta de servicios.");
                     content = `
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">¡Felicitaciones! Tu caso parece ideal para la Visa de Cónyuge. 🎉</h3>
-                        <p class="mb-5 text-lg">Según tus respuestas, cumples con los requisitos preliminares clave. El siguiente paso es preparar la documentación y la estrategia de tu caso.</p>
-                        <p class="font-semibold text-xl mb-6">Envía tus respuestas para recibir una propuesta detallada de nuestros servicios legales.</p>
-                        <a href="${finalWhatsappLink}" target="_blank" class="btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400 py-3 px-8 text-lg inline-flex items-center">
-                            <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.077l-1.329 4.855 4.968-1.311zm7.875-6.465c-.073-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.073-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.381-.001-.579.001-.198 0-.523.073-.797.346-.273.273-1.057 1.027-1.057 2.502 0 1.475 1.082 2.899 1.232 3.1 S4.92 15.35 6.636 16.03c1.714.68 3.14 1.1 3.583 1.398.443.299.852.495 1.13.644.278.149.533.125.707-.023.198-.174.852-.868.992-1.066.139-.198.272-.347.372-.422.102-.074.198-.024.347.05.149.074.668.312.792.422.124.11.223.173.248.272.025.1.025.297-.05.571-.075.273-.272.501-.372.624-.101.124-.198.223-.323.347-.124.124-.272.272-.422.372h.001c.223.125.523.173.797.223.297.05.943.025 1.36-.248.444-.272 1.399-1.125 1.622-2.177.223-1.051.223-1.949.148-2.146z"></path></svg>
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">¡Felicitaciones! Tu caso parece ideal para la Visa de Cónyuge. 🎉</h3>
+                        <p style="margin-bottom: 1.5rem;">Según tus respuestas, cumples con los requisitos preliminares clave. El siguiente paso es preparar la documentación y la estrategia de tu caso.</p>
+                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Envía tus respuestas para recibir una propuesta detallada de nuestros servicios legales.</p>
+                        <a href="${finalWhatsappLink}" target="_blank" class="btn btn-green">
                             Enviar y Pedir Propuesta
                         </a>
                     `;
@@ -467,34 +727,54 @@
                     resultArea.classList.add('bg-yellow-50', 'border-l-4', 'border-yellow-500', 'text-yellow-800');
                     const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "Me gustaría discutir mi caso para ver los siguientes pasos.");
                     content = `
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">¡Gracias! Tu caso requiere atención especial.</h3>
-                        <p class="mb-5 text-lg">Según tus respuestas, hay algunos puntos que necesitan ser revisados por un experto antes de proceder. Los puntos a considerar son:</p>
-                        <ul class="text-left list-disc list-inside mb-6 space-y-2">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">¡Gracias! Tu caso requiere atención especial.</h3>
+                        <p style="margin-bottom: 1.5rem;">Según tus respuestas, hay algunos puntos que necesitan ser revisados por un experto antes de proceder. Los puntos a considerar son:</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
                             ${messages.map(msg => `<li>${msg}</li>`).join('')}
                         </ul>
-                        <p class="font-semibold text-xl mb-6">Contáctanos para analizar tu situación en detalle y definir la mejor estrategia legal.</p>
-                        <a href="${finalWhatsappLink}" target="_blank" class="btn bg-green-500 text-white hover:bg-green-600 focus:ring-green-400 py-3 px-8 text-lg inline-flex items-center">
-                           <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.077l-1.329 4.855 4.968-1.311zm7.875-6.465c-.073-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.073-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.381-.001-.579.001-.198 0-.523.073-.797.346-.273.273-1.057 1.027-1.057 2.502 0 1.475 1.082 2.899 1.232 3.1 S4.92 15.35 6.636 16.03c1.714.68 3.14 1.1 3.583 1.398.443.299.852.495 1.13.644.278.149.533.125.707-.023.198-.174.852-.868.992-1.066.139-.198.272-.347.372-.422.102-.074.198-.024.347.05.149.074.668.312.792.422.124.11.223.173.248.272.025.1.025.297-.05.571-.075.273-.272.501-.372.624-.101.124-.198.223-.323.347-.124.124-.272.272-.422.372h.001c.223.125.523.173.797.223.297.05.943.025 1.36-.248.444-.272 1.399-1.125 1.622-2.177.223-1.051.223-1.949.148-2.146z"></path></svg>
+                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Contáctanos para analizar tu situación en detalle y definir la mejor estrategia legal.</p>
+                        <a href="${finalWhatsappLink}" target="_blank" class="btn btn-green">
                            Discutir mi Caso
                         </a>
                     `;
                 } else { // NOT_QUALIFIED
                     resultArea.classList.add('bg-red-50', 'border-l-4', 'border-red-600', 'text-red-800');
                     content = `
-                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Información Importante Sobre tu Caso</h3>
-                        <p class="mb-5 text-lg">Gracias por tus respuestas. Basado en la información proporcionada, hemos identificado algunos puntos que no cumplen con los requisitos fundamentales para la Visa de Cónyuge:</p>
-                        <ul class="text-left list-disc list-inside mb-6 space-y-2">
+                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Información Importante Sobre tu Caso</h3>
+                        <p style="margin-bottom: 1.5rem;">Gracias por tus respuestas. Basado en la información proporcionada, hemos identificado algunos puntos que no cumplen con los requisitos fundamentales para la Visa de Cónyuge:</p>
+                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
                              ${messages.map(msg => `<li>${msg}</li>`).join('')}
                         </ul>
-                        <p class="mb-6 text-lg">Si tu situación cambia o crees que ha habido un malentendido, por favor contáctanos.</p>
+                        <p style="margin-bottom: 1rem;">Si tu situación cambia o crees que ha habido un malentendido, por favor contáctanos.</p>
                     `;
                 }
 
                 resultArea.innerHTML = content;
                 resultArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
+
+            // Cookie Consent Banner Logic
+            const consentBanner = document.getElementById('cookie-consent-banner');
+            const acceptCookiesBtn = document.getElementById('accept-cookies');
+
+            function checkCookieConsent() {
+                if (!document.cookie.split(';').some((item) => item.trim().startsWith('cookie_consent='))) {
+                    consentBanner.style.display = 'flex';
+                }
+            }
+
+            if (acceptCookiesBtn) {
+                acceptCookiesBtn.addEventListener('click', function() {
+                    const d = new Date();
+                    d.setTime(d.getTime() + (365*24*60*60*1000));
+                    let expires = "expires="+ d.toUTCString();
+                    document.cookie = "cookie_consent=true;" + expires + ";path=/";
+                    consentBanner.style.display = 'none';
+                });
+            }
+
+            checkCookieConsent();
         });
     </script>
 </body>
 </html>
-
