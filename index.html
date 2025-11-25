@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- Meta Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,6 +17,7 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1389509355423812&ev=PageView&noscript=1"
     /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visa de Cónyuge Colombia | Colombian Passport</title>
@@ -147,6 +149,8 @@
         .btn-blue:hover { background-color: var(--blue-700); }
         .btn-green { background-color: var(--green-500); color: white; }
         .btn-green:hover { background-color: var(--green-600); }
+        .btn-outline { background-color: transparent; border: 2px solid var(--gray-600); color: var(--gray-600); }
+        .btn-outline:hover { background-color: var(--gray-600); color: white; }
 
         /* --- HERO SECTION --- */
         .hero-section {
@@ -282,6 +286,10 @@
         .bg-yellow-50 { background-color: var(--amber-50); }
         .text-yellow-800 { color: #854d0e; }
         .border-yellow-500 { border-color: var(--amber-500); }
+        
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .text-gray-800 { color: #1f2937; }
+        .border-gray-500 { border-color: #6b7280; }
 
         .border-l-4 { border-left-width: 4px; }
         .p-6 { padding: 1.5rem; }
@@ -411,9 +419,10 @@
         <div class="container">
             <div class="form-card">
                 <h2 class="section-title" style="margin-bottom: 1rem; color: var(--blue-700);">Verifica tu Elegibilidad para la Visa de Cónyuge</h2>
-                <p class="text-center" style="margin-bottom: 2.5rem; color: var(--gray-600);">Responde estas preguntas rápidas para una evaluación preliminar de tu caso. Es gratis, confidencial y sin compromiso.</p>
+                <p class="text-center" style="margin-bottom: 2.5rem; color: var(--gray-600);">Responde estas preguntas rápidas para saber si calificas para el servicio. Es gratis y confidencial.</p>
 
                 <form id="spouseVisaForm">
+                    <!-- Pregunta 1 -->
                     <div class="form-group">
                         <label class="form-label">1. ¿Tu pareja es ciudadano(a) colombiano(a) con Cédula de Ciudadanía vigente?</label>
                         <div class="radio-group">
@@ -422,6 +431,7 @@
                         </div>
                     </div>
 
+                    <!-- Pregunta 2 -->
                      <div class="form-group">
                         <label class="form-label">2. ¿Están legalmente casados?</label>
                         <div class="radio-group">
@@ -430,6 +440,7 @@
                         </div>
                     </div>
                     
+                    <!-- Pregunta 3 -->
                     <div class="form-group">
                         <label class="form-label">3. ¿Se casaron en Colombia o en el extranjero?</label>
                         <div class="radio-group">
@@ -438,6 +449,7 @@
                         </div>
                     </div>
 
+                    <!-- Pregunta 4 (Condicional) -->
                     <div id="registrationQuestion" class="form-group hidden">
                         <label class="form-label">4. Si se casaron en el extranjero, ¿ya registraron su matrimonio en Colombia?</label>
                         <div class="radio-group">
@@ -447,6 +459,7 @@
                         </div>
                     </div>
 
+                    <!-- Pregunta 5 -->
                     <div class="form-group">
                         <label for="applicationCountry" class="form-label">5. ¿Desde dónde se planea solicitar la visa?</label>
                         <select id="applicationCountry" name="applicationCountry" required>
@@ -457,6 +470,7 @@
                         </select>
                     </div>
 
+                    <!-- Pregunta 6 -->
                     <div class="form-group">
                         <label class="form-label">6. ¿El cónyuge extranjero tiene algún antecedente penal o judicial?</label>
                         <div class="radio-group">
@@ -465,6 +479,7 @@
                         </div>
                     </div>
                     
+                    <!-- Pregunta 7 -->
                     <div class="form-group">
                         <label class="form-label">7. ¿Planean vivir juntos en Colombia?</label>
                         <div class="radio-group">
@@ -473,10 +488,30 @@
                         </div>
                     </div>
 
+                    <!-- Pregunta 8: EL FILTRO DE PRESUPUESTO -->
+                    <div class="form-group bg-blue-50 p-6 rounded-lg border-2 border-blue-200 shadow-sm">
+                        <label class="form-label" style="color: var(--blue-800); font-weight: 700; font-size: 1.2rem; margin-bottom: 0.5rem;">8. Primer Paso: Consulta Diagnóstica</label>
+                        <p style="font-size: 1rem; color: var(--gray-700); margin-bottom: 1.25rem; line-height: 1.5;">
+                            Para garantizar el éxito de tu visa, iniciamos con una <strong>Consulta Jurídica Especializada ($80 USD)</strong>. 
+                            <br><span style="font-size: 0.9rem; color: var(--blue-600); display:block; margin-top:0.5rem;">✨ Este valor es 100% deducible del costo total del servicio ($550 USD) si decides contratarnos.</span>
+                        </p>
+                        <div class="radio-group" style="flex-direction: column; gap: 0.75rem;">
+                            <div style="display:flex; align-items:center;">
+                                <input type="radio" id="budgetYes" name="hasBudget" value="yes" class="radio-custom" required>
+                                <label for="budgetYes" class="radio-custom-label" style="flex: 1; font-weight: 600; padding: 1rem;">Sí, quiero agendar mi consulta diagnóstica ($80 USD)</label>
+                            </div>
+                            
+                            <div style="display:flex; align-items:center;">
+                                <input type="radio" id="budgetNo" name="hasBudget" value="no" class="radio-custom">
+                                <label for="budgetNo" class="radio-custom-label" style="flex: 1; padding: 1rem;">No, prefiero buscar información gratuita</label>
+                            </div>
+                        </div>
+                    </div>
+
                     <button type="submit" id="submitSpouseVisaBtn" class="btn btn-blue" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Ver mi Evaluación Preliminar</button>
                 </form>
 
-                <div id="resultArea" style="display: none; margin-top: 2rem;"></div>
+                <div id="resultArea" class="mt-10" style="display: none;"></div>
             </div>
         </div>
     </section>
@@ -666,6 +701,13 @@
                     let status = 'QUALIFIED';
                     let messages = [];
 
+                    // LOGIC: FILTER BY BUDGET FIRST
+                    if (data.hasBudget === 'no') {
+                        status = 'BUDGET_ISSUE';
+                        displayResults(status, messages, data);
+                        return; // Stop checking other conditions
+                    }
+
                     if (data.isPartnerColombian === 'no') {
                         status = 'NOT_QUALIFIED';
                         messages.push('Tu pareja debe ser ciudadano(a) colombiano(a) para esta visa.');
@@ -694,7 +736,8 @@
             function displayResults(status, messages, data) {
                 const resultArea = document.getElementById('resultArea');
                 resultArea.innerHTML = '';
-                resultArea.className = 'p-6 rounded-lg text-center'; // Reset basic classes
+                // Reset basic classes, remove colors
+                resultArea.className = 'p-6 rounded-lg text-center border-l-4'; 
                 resultArea.style.display = 'block';
                 let content = '';
 
@@ -707,45 +750,58 @@
                 }
                 whatsappMessage += `5. Lugar de Solicitud: ${data.applicationCountry}\n`;
                 whatsappMessage += `6. Antecedentes Penales (extranjero): ${data.criminalRecord}\n`;
-                whatsappMessage += `7. Planean vivir en Colombia: ${data.liveTogether}\n\n`;
+                whatsappMessage += `7. Planean vivir en Colombia: ${data.liveTogether}\n`;
+                whatsappMessage += `8. Interesado en Consulta ($80): Sí\n\n`;
                 
                 const encodedMessage = encodeURIComponent(whatsappMessage);
                 const whatsappBaseLink = `https://wa.me/573223395612?text=`;
                 
                 if(status === 'QUALIFIED') {
-                    resultArea.classList.add('bg-green-50', 'border-l-4', 'border-green-600', 'text-green-800');
-                    const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "Me gustaría recibir una propuesta de servicios.");
+                    resultArea.classList.add('bg-green-50', 'border-green-600', 'text-green-800');
+                    const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "Me gustaría agendar mi consulta diagnóstica.");
                     content = `
-                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">¡Felicitaciones! Tu caso parece ideal para la Visa de Cónyuge. 🎉</h3>
-                        <p style="margin-bottom: 1.5rem;">Según tus respuestas, cumples con los requisitos preliminares clave. El siguiente paso es preparar la documentación y la estrategia de tu caso.</p>
-                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Envía tus respuestas para recibir una propuesta detallada de nuestros servicios legales.</p>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">¡Felicitaciones! Tu caso parece ideal para la Visa de Cónyuge. 🎉</h3>
+                        <p class="mb-5 text-lg">Según tus respuestas, cumples con los requisitos preliminares clave. El siguiente paso es realizar tu consulta diagnóstica ($80 USD) para revisar tus documentos y definir la estrategia.</p>
+                        <p class="font-semibold text-xl mb-6">Haz clic abajo para contactarnos y agendar tu cita.</p>
                         <a href="${finalWhatsappLink}" target="_blank" class="btn btn-green">
-                            Enviar y Pedir Propuesta
+                            <svg class="w-6 h-6 mr-2 inline-block" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.077l-1.329 4.855 4.968-1.311zm7.875-6.465c-.073-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.073-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.381-.001-.579.001-.198 0-.523.073-.797.346-.273.273-1.057 1.027-1.057 2.502 0 1.475 1.082 2.899 1.232 3.1 S4.92 15.35 6.636 16.03c1.714.68 3.14 1.1 3.583 1.398.443.299.852.495 1.13.644.278.149.533.125.707-.023.198-.174.852-.868.992-1.066.139-.198.272-.347.372-.422.102-.074.198-.024.347.05.149.074.668.312.792.422.124.11.223.173.248.272.025.1.025.297-.05.571-.075.273-.272.501-.372.624-.101.124-.198.223-.323.347-.124.124-.272.272-.422.372h.001c.223.125.523.173.797.223.297.05.943.025 1.36-.248.444-.272 1.399-1.125 1.622-2.177.223-1.051.223-1.949.148-2.146z"></path></svg>
+                            Agendar Consulta ($80 USD)
+                        </a>
+                    `;
+                } else if (status === 'BUDGET_ISSUE') {
+                    resultArea.classList.add('bg-gray-100', 'border-gray-500', 'text-gray-800');
+                    content = `
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Gracias por tu honestidad.</h3>
+                        <p class="mb-5 text-lg">Entendemos que nuestro servicio completo no se ajusta a todos los presupuestos. Dado que buscas opciones gratuitas o de menor costo, nuestro servicio personalizado no es la opción adecuada para ti en este momento.</p>
+                        <p class="mb-6 text-lg">Te invitamos a consultar nuestra guía gratuita y completa sobre la Visa de Cónyuge:</p>
+                        <a href="https://www.abogadosdemigracion.com.co/visas-para-colombia/guia-visa-conyuge" target="_blank" class="btn btn-outline" style="border: 2px solid #4b5563; color: #4b5563;">
+                           Leer Guía Gratuita
                         </a>
                     `;
                 } else if(status === 'MORE_INFO_NEEDED') {
-                    resultArea.classList.add('bg-yellow-50', 'border-l-4', 'border-yellow-500', 'text-yellow-800');
+                    resultArea.classList.add('bg-yellow-50', 'border-yellow-500', 'text-yellow-800');
                     const finalWhatsappLink = whatsappBaseLink + encodeURIComponent(whatsappMessage + "Me gustaría discutir mi caso para ver los siguientes pasos.");
                     content = `
-                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">¡Gracias! Tu caso requiere atención especial.</h3>
-                        <p style="margin-bottom: 1.5rem;">Según tus respuestas, hay algunos puntos que necesitan ser revisados por un experto antes de proceder. Los puntos a considerar son:</p>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">¡Gracias! Tu caso requiere atención especial.</h3>
+                        <p class="mb-5 text-lg">Según tus respuestas, hay algunos puntos que necesitan ser revisados por un experto antes de proceder (como antecedentes o registro de matrimonio).</p>
+                        <ul class="text-left list-disc list-inside mb-6 space-y-2">
                             ${messages.map(msg => `<li>${msg}</li>`).join('')}
                         </ul>
-                        <p style="font-weight: 600; font-size: 1.1rem; margin-bottom: 1.5rem;">Contáctanos para analizar tu situación en detalle y definir la mejor estrategia legal.</p>
+                        <p class="font-semibold text-xl mb-6">Te recomendamos agendar una consulta diagnóstica para analizar tu situación en detalle.</p>
                         <a href="${finalWhatsappLink}" target="_blank" class="btn btn-green">
-                           Discutir mi Caso
+                           <svg class="w-6 h-6 mr-2 inline-block" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.269.655 4.357 1.846 6.077l-1.329 4.855 4.968-1.311zm7.875-6.465c-.073-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.073-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.501-.183-.001-.381-.001-.579.001-.198 0-.523.073-.797.346-.273.273-1.057 1.027-1.057 2.502 0 1.475 1.082 2.899 1.232 3.1 S4.92 15.35 6.636 16.03c1.714.68 3.14 1.1 3.583 1.398.443.299.852.495 1.13.644.278.149.533.125.707-.023.198-.174.852-.868.992-1.066.139-.198.272-.347.372-.422.102-.074.198-.024.347.05.149.074.668.312.792.422.124.11.223.173.248.272.025.1.025.297-.05.571-.075.273-.272.501-.372.624-.101.124-.198.223-.323.347-.124.124-.272.272-.422.372h.001c.223.125.523.173.797.223.297.05.943.025 1.36-.248.444-.272 1.399-1.125 1.622-2.177.223-1.051.223-1.949.148-2.146z"></path></svg>
+                           Agendar Consulta ($80 USD)
                         </a>
                     `;
                 } else { // NOT_QUALIFIED
-                    resultArea.classList.add('bg-red-50', 'border-l-4', 'border-red-600', 'text-red-800');
+                    resultArea.classList.add('bg-red-50', 'border-red-600', 'text-red-800');
                     content = `
-                        <h3 style="font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;">Información Importante Sobre tu Caso</h3>
-                        <p style="margin-bottom: 1.5rem;">Gracias por tus respuestas. Basado en la información proporcionada, hemos identificado algunos puntos que no cumplen con los requisitos fundamentales para la Visa de Cónyuge:</p>
-                        <ul style="text-align: left; list-style: disc; padding-left: 1.5rem; margin-bottom: 1.5rem;">
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">Información Importante Sobre tu Caso</h3>
+                        <p class="mb-5 text-lg">Gracias por tus respuestas. Basado en la información proporcionada, hemos identificado algunos puntos que no cumplen con los requisitos fundamentales para la Visa de Cónyuge:</p>
+                        <ul class="text-left list-disc list-inside mb-6 space-y-2">
                              ${messages.map(msg => `<li>${msg}</li>`).join('')}
                         </ul>
-                        <p style="margin-bottom: 1rem;">Si tu situación cambia o crees que ha habido un malentendido, por favor contáctanos.</p>
+                        <p class="mb-6 text-lg">Si tu situación cambia o crees que ha habido un malentendido, por favor contáctanos.</p>
                     `;
                 }
 
